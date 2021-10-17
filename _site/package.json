@@ -7,7 +7,7 @@
     "test": "istanbul cover jasmine",
     "dev": "webpack-dev-server",
     "build": "webpack",
-    "serve": "webpack && cd _build && bundle exec jekyll serve",
+    "serve": "webpack && bundle exec jekyll serve",
     "predeploy": "npm run build"
   },
   "repository": {
