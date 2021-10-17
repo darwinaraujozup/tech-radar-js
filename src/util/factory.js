@@ -19,13 +19,12 @@ const ExceptionMessages = require('./exceptionMessages');
 const CSVBuilder = function (url) {
     var self = {};
 
-    self.build = async function () {
-        const data = await d3.csv(url);
-
-        createBlips(data)
+    self.build = function () {
+        d3.csv(url, createBlips);
     }
 
     var createBlips = function (data) {
+    console.log("🚀 ~ file: factory.js ~ line 27 ~ createBlips ~ data", data)
         try {
             var columnNames = data['columns'];
             delete data['columns'];

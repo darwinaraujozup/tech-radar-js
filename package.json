@@ -23,8 +23,8 @@
   "homepage": "https://github.com/agilepartner/tech-radar-js#readme",
   "dependencies": {
     "chance": "^1.1.8",
-    "d3": "^7.1.1",
-    "d3-tip": "^0.9.1",
+    "d3": "^4.2.6",
+    "d3-tip": "^0.7.1",
     "lodash": "^4.17.21",
     "sanitize-html": "^2.5.2",
     "tabletop": "^1.6.3"

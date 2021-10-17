@@ -10,7 +10,7 @@ const MIN_BLIP_WIDTH = 12;
 const Radar = function(size, radar) {
   var svg, radarElement;
 
-  var tip = d3tip
+  var tip = d3tip()
     .attr("class", "d3-tip")
     .html(function(text) {
       return text;
