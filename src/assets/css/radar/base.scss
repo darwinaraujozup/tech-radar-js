@@ -185,10 +185,42 @@
       .blip-link {
         text-decoration: none;
         cursor: pointer;
+
+        &.adopt {
+          path {
+            fill: #FF6D00;
+          }
+        }
+        
+        &.trial {
+          path {
+            fill: #006B69;
+          }
+        }
+
+        &.hold {
+          path {
+            fill: #0984E3;
+          }
+        }
+
+        &.assess {
+          path {
+            fill: #E17055;
+          }
+        }
       }
 
       .quadrant-group {
         cursor: pointer;
+
+        &-fourth {
+          .line-text {
+            &.hold {
+              display: none;
+            }
+          }
+        }
       }
 
       circle, polygon, path {
@@ -226,6 +258,22 @@
           text-transform: uppercase;
           fill: $black;
           font-size: 11px;
+
+          &.adopt {
+            fill: #FF6D00;
+          }
+
+          &.trial {
+            fill: #006B69;
+          }
+
+          &.hold {
+            fill: #0984E3;
+          }
+
+          &.assess {
+            fill: #E17055;
+          }
         }
       }
     }

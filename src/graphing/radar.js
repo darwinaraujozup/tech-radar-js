@@ -108,7 +108,7 @@ const Radar = function(size, radar) {
       if (quadrant.order === "first" || quadrant.order === "fourth") {
         quadrantGroup
           .append("text")
-          .attr("class", "line-text")
+          .attr("class", `line-text ${ring.name()}`)
           .attr("y", center() + 4)
           .attr(
             "x",
@@ -121,7 +121,7 @@ const Radar = function(size, radar) {
       } else {
         quadrantGroup
           .append("text")
-          .attr("class", "line-text")
+          .attr("class", `line-text ${ring.name()}`)
           .attr("y", center() + 4)
           .attr(
             "x",
@@ -591,8 +591,6 @@ const Radar = function(size, radar) {
 
     var blipScale = 3 / 4;
     var blipTranslate = (1 - blipScale) / blipScale;
-
-    console.log('SVG:', document.querySelector('.page-single-card').scrollWidth);
 
     svg.style("left", moveLeft + "px").style("right", moveRight + "px");
     d3.select(".quadrant-group-" + order)
