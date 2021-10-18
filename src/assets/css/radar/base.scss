@@ -146,7 +146,7 @@
 @media screen {
 
   #radar {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 
@@ -166,19 +166,19 @@
       path {
         &.ring-arc-3 {
           stroke: none;
-          fill: $grey-light;
+          fill: #F5F6F7;
         }
         &.ring-arc-2 {
           stroke: none;
-          fill: $grey;
+          fill: #ECEDEE;
         }
         &.ring-arc-1 {
           stroke: none;
-          fill: $grey-dark;
+          fill: #E2E3E6;
         }
         &.ring-arc-0 {
           stroke: none;
-          fill: $grey-darkest;
+          fill: #D9DADE;
         }
       }
 
@@ -334,4 +334,8 @@
       }
     }
   }
+}
+
+.page-single-card {
+  width: 658px;
 }

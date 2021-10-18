@@ -63,7 +63,7 @@ const Radar = function(size, radar) {
       .attr("x2", center())
       .attr("y1", startY - 2)
       .attr("y2", endY + 2)
-      .attr("stroke-width", 10);
+      .attr("stroke-width", 1);
 
     quadrantGroup
       .append("line")
@@ -71,7 +71,7 @@ const Radar = function(size, radar) {
       .attr("y1", center())
       .attr("x2", startX)
       .attr("y2", center())
-      .attr("stroke-width", 10);
+      .attr("stroke-width", 1);
   }
 
   function plotQuadrant(rings, quadrant) {
@@ -399,7 +399,7 @@ const Radar = function(size, radar) {
 
     var group = quadrantGroup
       .append("g")
-      .attr("class", "blip-link triggerOpenModal")
+      .attr("class", `blip-link triggerOpenModal ${blip.ring().name()}`)
       .attr("data-modal", blip.description())
       .attr("aria-controls", blip.description());
 
@@ -584,11 +584,15 @@ const Radar = function(size, radar) {
       ((1 - adjustX) / 2) * (1 - scale / 2) * size;
     var translateYAll = (((1 + adjustY) / 2) * size * scale) / 2;
 
-    var moveRight = ((1 + adjustX) * (0.8 * window.innerWidth - size)) / 2;
-    var moveLeft = ((1 - adjustX) * (0.8 * window.innerWidth - size)) / 2;
+    const containerWidth = document.querySelector('.page-single-card').scrollWidth;
+
+    var moveRight = ((1 + adjustX) * (1 * containerWidth - size)) / 2;
+    var moveLeft = ((1 - adjustX) * (1 * containerWidth - size)) / 2;
 
     var blipScale = 3 / 4;
     var blipTranslate = (1 - blipScale) / blipScale;
+
+    console.log('SVG:', document.querySelector('.page-single-card').scrollWidth);
 
     svg.style("left", moveLeft + "px").style("right", moveRight + "px");
     d3.select(".quadrant-group-" + order)
@@ -645,7 +649,7 @@ const Radar = function(size, radar) {
     quadrants = radar.quadrants();
     var header = plotRadarHeader();
 
-    plotQuadrantButtons(quadrants, header);
+    // plotQuadrantButtons(quadrants, header);
 
     radarElement.style("height", size + 14 + "px");
     svg = radarElement.append("svg").call(tip);
