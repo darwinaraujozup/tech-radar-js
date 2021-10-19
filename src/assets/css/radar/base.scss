@@ -254,10 +254,11 @@
         }
 
         &.line-text {
-          font-weight: bold;
-          text-transform: uppercase;
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 18px;
           fill: $black;
-          font-size: 11px;
 
           &.adopt {
             fill: #FF6D00;
