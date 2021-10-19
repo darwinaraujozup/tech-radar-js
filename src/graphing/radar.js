@@ -415,8 +415,7 @@ const Radar = function(size, radar) {
       .attr("y", y + 4)
       .attr("class", "blip-text")
       .style("font-size", (blip.width * 10) / 22 + "px")
-      .attr("text-anchor", "middle")
-      .text(blip.number());
+      .attr("text-anchor", "middle");
 
     var blipListItem = ringList.append("li");
     var blipText =
@@ -508,6 +507,8 @@ const Radar = function(size, radar) {
       .attr("transform", "scale(1)");
 
     d3.selectAll(".quadrant-group").style("pointer-events", "auto");
+
+    toggleLineTexts('none');
   }
 
   function plotRadarHeader() {
@@ -630,6 +631,12 @@ const Radar = function(size, radar) {
         "transform",
         "translate(" + translateXAll + "," + translateYAll + ")scale(0)"
       );
+
+    toggleLineTexts('block');
+  }
+
+  function toggleLineTexts(value) {
+    d3.selectAll('.line-text').style('display', value)
   }
 
   self.init = function() {
@@ -662,6 +669,8 @@ const Radar = function(size, radar) {
       plotTexts(quadrantGroup, rings, quadrant);
       plotBlips(quadrantGroup, rings, quadrant);
     });
+
+    toggleLineTexts('none');
   };
 
   return self;
