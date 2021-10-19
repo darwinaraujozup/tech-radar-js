@@ -136,23 +136,49 @@ const Radar = function(size, radar) {
   }
 
   function triangle(blip, x, y, order, group) {
-    return group
-      .append("path")
-      .attr(
-        "d",
-        "M412.201,311.406c0.021,0,0.042,0,0.063,0c0.067,0,0.135,0,0.201,0c4.052,0,6.106-0.051,8.168-0.102c2.053-0.051,4.115-0.102,8.176-0.102h0.103c6.976-0.183,10.227-5.306,6.306-11.53c-3.988-6.121-4.97-5.407-8.598-11.224c-1.631-3.008-3.872-4.577-6.179-4.577c-2.276,0-4.613,1.528-6.48,4.699c-3.578,6.077-3.26,6.014-7.306,11.723C402.598,306.067,405.426,311.406,412.201,311.406"
-      )
-      .attr(
-        "transform",
-        "scale(" +
-          blip.width / 34 +
-          ") translate(" +
-          (-404 + x * (34 / blip.width) - 17) +
-          ", " +
-          (-282 + y * (34 / blip.width) - 17) +
-          ")"
-      )
-      .attr("class", order);
+    const svg = group
+    .append('g')
+    .attr("transform", `translate(${x - 6}, ${y - 6})`)
+    .attr("class", order)   
+
+    svg
+    .append(`circle`)
+    .attr(`cx`, `7.24229`)
+    .attr(`cy`, `6.88961`)
+    .attr(`r`, `4.05131`)
+    .attr("transform", "rotate(-90 7.24229 6.88961)")
+    
+    
+    svg
+    .append(`circle`)
+    .attr(`cx`, `7.24262`)
+    .attr(`cy`, `6.88976`)
+    .attr(`r`, `5.76112`)
+    .attr("transform", "rotate(-90 7.24229 6.88961)")
+    .attr(`stroke`, `#8C909C`)
+    .attr("fill", "none")
+
+    return group;
+
+
+
+    // return group
+    //   .append("path")
+    //   .attr(
+    //     "d",
+    //     "M412.201,311.406c0.021,0,0.042,0,0.063,0c0.067,0,0.135,0,0.201,0c4.052,0,6.106-0.051,8.168-0.102c2.053-0.051,4.115-0.102,8.176-0.102h0.103c6.976-0.183,10.227-5.306,6.306-11.53c-3.988-6.121-4.97-5.407-8.598-11.224c-1.631-3.008-3.872-4.577-6.179-4.577c-2.276,0-4.613,1.528-6.48,4.699c-3.578,6.077-3.26,6.014-7.306,11.723C402.598,306.067,405.426,311.406,412.201,311.406"
+    //   )
+    //   .attr(
+    //     "transform",
+    //     "scale(" +
+    //       blip.width / 34 +
+    //       ") translate(" +
+    //       (-404 + x * (34 / blip.width) - 17) +
+    //       ", " +
+    //       (-282 + y * (34 / blip.width) - 17) +
+    //       ")"
+    //   )
+    //   .attr("class", order);
   }
 
   function triangleLegend(x, y, group) {
@@ -533,7 +559,7 @@ const Radar = function(size, radar) {
   }
 
   function plotRadarHeader() {
-    var header = d3.select("radar").insert("header", ".error-container");
+    var header = d3.select("radar").insert("div", ".error-container").classed('pg-radar-main-foot', true);
     return header;
   }
 
@@ -577,7 +603,7 @@ const Radar = function(size, radar) {
 
   function selectQuadrant(order, startAngle) {
     d3.selectAll(".home-link").classed("selected", false);
-    createHomeLink(d3.select("header"));
+    createHomeLink(d3.select(".pg-radar-main-foot"));
 
     d3.selectAll(".button")
       .classed("selected", false)

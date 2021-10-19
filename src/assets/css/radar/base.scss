@@ -163,7 +163,7 @@
         color: $black;
       }
 
-      path {
+      path, g {
         &.ring-arc-3 {
           stroke: none;
           fill: #F5F6F7;
@@ -187,25 +187,25 @@
         cursor: pointer;
 
         &.adopt {
-          path {
+          path, g {
             fill: #FF6D00;
           }
         }
         
         &.trial {
-          path {
+          path, g {
             fill: #006B69;
           }
         }
 
         &.hold {
-          path {
+          path, g {
             fill: #0984E3;
           }
         }
 
         &.assess {
-          path {
+          path, g {
             fill: #E17055;
           }
         }

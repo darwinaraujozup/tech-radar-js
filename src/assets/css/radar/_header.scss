@@ -43,24 +43,7 @@ header {
     margin-left: 100px;
   }
 
-  .home-link {
-    font-size: 12px;
-    line-height: 16px;
-    color: #113B65;
-
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    flex-direction: row-reverse;
-    padding: 4px 8px;
-    border: 1px solid #113B65;
-    border-radius: 50px;
-    margin-top: 21px;
-
-    > span {
-      margin-left: 10px;
-    }
-  }
+  
 
   .button {
     font-size: $baseFont;
@@ -121,5 +104,23 @@ header {
         color: $white;
       }
     }
+  }
+}
+
+.home-link {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 4px 8px;
+  border: 1px solid #113B65;
+  border-radius: 50px;
+  margin-top: 21px;
+
+  > span {
+    font-size: 12px;
+    line-height: 16px;
+    color: #113B65;
+    margin-left: 10px;
   }
 }
