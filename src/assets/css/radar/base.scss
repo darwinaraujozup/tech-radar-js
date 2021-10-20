@@ -187,25 +187,25 @@
         cursor: pointer;
 
         &.adopt {
-          path, g {
+          g {
             fill: #FF6D00;
           }
         }
         
         &.trial {
-          path, g {
+          g {
             fill: #006B69;
           }
         }
 
         &.hold {
-          path, g {
+          g {
             fill: #0984E3;
           }
         }
 
         &.assess {
-          path, g {
+          g {
             fill: #E17055;
           }
         }

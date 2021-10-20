@@ -1,65 +1,65 @@
-name,ring,quadrant,isNew,description
-"C#",adopt,"Languages and Frameworks",true,"<a href='https://docs.microsoft.com/en-us/dotnet/csharp/'>C#</a> is our language of choice. It's strongly-typed, blends functional and object-oriented programming and works on all the OS we need to support."
-"TypeScript",adopt,"Languages and Frameworks",true,"<a href='https://www.typescriptlang.org/'>TypeScript</a> is our default choice for running code in the browser. It's strongly-typed and smoothes out the rough bits of JavaScript."
-"Go",trial,"Languages and Frameworks",true,"<a href='https://golang.org/'>Go</a> is the natural language to use when extending Kubernetes with operators."
-"Java",trial,"Languages and Frameworks",true,"Redgate purchased Flyway, written in <a href='https://www.oracle.com/java/'>Java</a>. Java is a plausible choice for new products (due to its rich ecosystem), but we default to C#."
-"Bash",adopt,"Languages and Frameworks",true,"<a href='https://www.gnu.org/software/bash/'>Bash</a> is our default choice for scripting internal tools. Everyone should be familiar with the Bash toolkit."
-"PowerShell",hold,"Languages and Frameworks",true,"Don't use PowerShell for new projects - prefer Bash."
-".NET 5",adopt,"Languages and Frameworks",true,"<a href='https://dotnet.microsoft.com/'>.NET 5</a> is now cross-platform and a great choice for desktop, web and cloud-based applications."
-".NET Core",hold,"Languages and Frameworks",true,"Don't use .NET Core - we've moved on to .NET 5."
-"ASP.NET Core",adopt,"Languages and Frameworks",true,"<a href='https://dotnet.microsoft.com/apps/aspnet'>ASP.NET</a>."
-"React",adopt,"Languages and Frameworks",true,"<a href='https://reactjs.org/'>React</a> makes it painless to create interactive UIs."
-"Electron",adopt,"Platforms",true,"Electron has proved itself for developing web-based desktop products. It's our default choice for new desktop-based applications."
-"WinForms",hold,"Languages and Frameworks",true,"Don't use WinForms for new projects - prefer Electron."
-"WPF",hold,"Languages and Frameworks",true,"Don't use WPF for new projects - prefer Electron."
-"Blazor.Net",assess,"Languages and Frameworks",true,"<a href='https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor'>Blazor</a> is super exciting. It means we might get to leverage our existing C# skills in the browser. It's too early for Redgate to commit to using this in production, so it's in assess so we can keep a good understanding of developments in this area."
-"Visual Studio",adopt,"Tools",true,"Visual Studio is our default IDE for developing in C#. We get the Enterprise edition via our MSDN subscription."
-"Rider",adopt,"Tools",true,"Many teams use Rider instead of Visual Studio for their development. We have licences for it."
-"VS Code",adopt,"Tools",true,"A free lightweight IDE. Our text editor of choice."
-"GitHub",adopt,"Tools",true,"All development should use GitHub."
-"TeamCity",adopt,"Tools",true,"TeamCity is our default build system."
-"Azure DevOps",trial,"Tools",true,"We believe Azure DevOps might be a fine alternative to TeamCity."
-"GitHub Actions",assess,"Tools",true,"We're keeping an eye on GitHub actions as part of simplifying our build process."
-"Redgate.Build",hold,"Tools",true,"Redgate.Build is our own PowerShell based build scripts. Over time it's become complicated and we wouldn't recommend it for new projects."
-"Terraform",adopt,"Tools",true,"Used for automating infrastucture provisioning."
-"Application Insights",adopt,"Tools",true,"All applications should use Application Insights as the default developer telemetry platform (incl. feature usage and error reporting)."
-"Raygun",hold,"Tools",true,"Deprecated in favour of Application Insights"
-"Flyway",adopt,"Tools",true,"Our default tool for migrating database schemas."
-"WSL 2",adopt,"Tools",true,"Windows Subsystem for Linux should be installed on every development machine"
-"SignalR",adopt,"Tools",true,"<a href='https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-5.0'>SignalR</a> is our default choice for push-functionality."
-"Hashicorp Vault",adopt,"Tools",true,"We recommend <a href='https://www.vaultproject.io/'>Hashicorp Vault</a> for storing secrets."
-"Keepass files in GitHub",hold,"Tools",true,"Use a password manager (or Vault) instead."
-"Docker",adopt,"Tools",true,"Docker should be used as the default containerisation technology. Used for building, testing and deployment."
-"gRPC",trial,"Tools",true,"<a href='https://grpc.io/'>gRPC</a> is a high-performance RPC framework which we may investigate for high-volume data collection (for example, SQL Monitor)."
-"Snyk",adopt,"Tools",true,"We use Snyk to scan for known vulnerabilities in our products' dependencies."
-"DocFx",trial,"Tools",true,"<a href='https://dotnet.github.io/docfx/'>DocFX</a> is an extensible and scalable static documentation generator. We're experimenting with it for the <a href='https://progression.red-gate.com'>web version of the progression framework</a>. Could this be a future solution to host our documentation too?"
-"Makefiles",assess,"Tools",true,"Should we fall back to using Makefiles as part of a simpler build process? Again, this is part of our desire to simplify our build process."
-"Cake",assess,"Tools",true,"<a href='https://cakebuild.net/'>Cake</a> is a free and OSS cross-platform build automation system with a C# DSL."
-"Bazel",assess,"Tools",true,"<a href='https://bazel.build/'>Bazel</a> is a build/test tool similar to Make/Maven/Gradle."
-"Earthly",assess,"Tools",true,"<a href='https://earthly.dev/'>Earthly</a> is a syntax for defining your build leading to repeatable and understable builds. "
-"Feature Flagging vendors (Launch Darkly?)",assess,"Tools",true,"If your usage of feature flagging becomes sufficiently complicated then it's time to investigate third-party vendors."
-"Virtualbox based Vagrant boxes",hold,"Tools",true,"Use Docker instead where possible. UI and manual testing may still use Virtualbox."
-"Flux 2",trial,"Tools",true,"<a href='https://fluxcd.io/'>Flux</a> is an implementation of GitOps for Kuberenetes"
-"Redgate Platform",adopt,"Platforms",true,"All new applications should be built on the Redgate Platform."
-"Kubernetes",adopt,"Platforms",true,"<a href='https://kubernetes.io/'>K8S</a> is the undeniable winner of orchestration tools."
-"SQL Server as backing store",adopt,"Platforms",true,"When a product needs to store more complex data than it can fit in a flat file, we ask the customer for a SQL DB."
-"PostgreSQL as backing store",trial,"Platforms",true,"If there's a very good reason to use a lightweight/free database engine, we should choose Postgres."
-"Windows",adopt,"Platforms",true,"Windows must be one of our supported target platforms."
-"Linux x64 (.NET supported versions)",adopt,"Platforms",true,"Linux must be one of our supported target platforms."
-"macOS",adopt,"Platforms",true,"MacOS must be one of our supported target platforms."
-"Virtual Machines",hold,"Platforms",true,"Prefer using lightweight Docker containers."
-"CLIs",adopt,"Techniques",true,"Product should, where possible, expose funtionality via a CLI."
-"RESTful APIs",adopt,"Techniques",true,"A REST architetural style is our default choice for building web APIs. Deviations can be made when it makes sense to do so."
-"Containerised products",assess,"Techniques",true,"Where possible, all new products should be built to be containerised. We should ship the Mac/Linux versions of our products inside Docker containers."
-"Infrastructure as code",adopt,"Techniques",true,"Infrastructure should be provisioned through code rather than manually (except for ad-hoc testing)"
-"Automated code style settings",adopt,"Techniques",true,"Codebases should be formatted consistently. Automated code-style settings achieve this without fuss."
-"Static code analysis (linters)",adopt,"Techniques",true,"Static code analysis is invaluable for automatically checking for problems in code. We use ESLint for JS and Roslyn-based analyzers for .NET. We also experimented with SonarQube but our implementation wasn't giving us confidence."
-"Semantic Versioning",adopt,"Techniques",true,"We should use semver for all our versioning needs unless there's a compelling reason not to."
-"Database Agnosticism",adopt,"Techniques",true,"We aim for feature parity between products that support different database engines."
-"Feature Flags",adopt,"Techniques",true,"Feature Flags are a great technique for minimizing long-lived feature branches. Our recommendation is to focus on simplicity - if you find yourself writing substantial code to support Feature Flags, consider using a third-party solution."
-"Continuous delivery",adopt,"Techniques",true,"Products should be ready for release at any time."
-"Continuous Deployment",assess,"Techniques",true,"We'd like to evaluate technology that increases our deployment frequency, with a view to getting value into the hands of our users as quickly as possible."
-"Build inside Docker containers",trial,"Techniques",true,"We should reduce build dependencies by building and testing our products inside containers."
-"AI/ML",assess,"Techniques",true,"AI/ML are becoming commoditized. Off-the-shelf software is available for predictive modelling, text analysis, anomaly detection and much more."
-"Automation/Low-code solutions",assess,"Techniques",true,"Remote is driving a digital transformation across industries. Low-code solutions, such as Power Apps, allow organizations to modernize these processes."
-"Git Ops",trial,"Techniques",true,"The core idea of GitOps is having a Git repository that always contains declarative descriptions of the infrastructure currently desired in the production environment and an automated process to make the production environment match the described state in the repository. If you want to deploy a new application or update an existing one, you only need to update the repository - the automated process handles everything else. It’s like having cruise control for managing your applications in production. <a href='https://www.gitops.tech/'>Read more</a>"
+name,ring,quadrant,isNew,description,wasUpdated
+"C#",adopt,"Languages and Frameworks",false,"<a href='https://docs.microsoft.com/en-us/dotnet/csharp/'>C#</a> is our language of choice. It's strongly-typed, blends functional and object-oriented programming and works on all the OS we need to support.",true
+"TypeScript",adopt,"Languages and Frameworks",true,"<a href='https://www.typescriptlang.org/'>TypeScript</a> is our default choice for running code in the browser. It's strongly-typed and smoothes out the rough bits of JavaScript.",true
+"Go",trial,"Languages and Frameworks",false,"<a href='https://golang.org/'>Go</a> is the natural language to use when extending Kubernetes with operators.",false
+"Java",trial,"Languages and Frameworks",true,"Redgate purchased Flyway, written in <a href='https://www.oracle.com/java/'>Java</a>. Java is a plausible choice for new products (due to its rich ecosystem), but we default to C#.",true
+"Bash",adopt,"Languages and Frameworks",false,"<a href='https://www.gnu.org/software/bash/'>Bash</a> is our default choice for scripting internal tools. Everyone should be familiar with the Bash toolkit.",true
+"PowerShell",hold,"Languages and Frameworks",true,"Don't use PowerShell for new projects - prefer Bash.",false
+".NET 5",adopt,"Languages and Frameworks",true,"<a href='https://dotnet.microsoft.com/'>.NET 5</a> is now cross-platform and a great choice for desktop, web and cloud-based applications.",false
+".NET Core",hold,"Languages and Frameworks",true,"Don't use .NET Core - we've moved on to .NET 5.",false
+"ASP.NET Core",adopt,"Languages and Frameworks",true,"<a href='https://dotnet.microsoft.com/apps/aspnet'>ASP.NET</a>.",false
+"React",adopt,"Languages and Frameworks",true,"<a href='https://reactjs.org/'>React</a> makes it painless to create interactive UIs.",false
+"Electron",adopt,"Platforms",true,"Electron has proved itself for developing web-based desktop products. It's our default choice for new desktop-based applications.",false
+"WinForms",hold,"Languages and Frameworks",true,"Don't use WinForms for new projects - prefer Electron.",false
+"WPF",hold,"Languages and Frameworks",true,"Don't use WPF for new projects - prefer Electron.",false
+"Blazor.Net",assess,"Languages and Frameworks",true,"<a href='https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor'>Blazor</a> is super exciting. It means we might get to leverage our existing C# skills in the browser. It's too early for Redgate to commit to using this in production, so it's in assess so we can keep a good understanding of developments in this area.",false
+"Visual Studio",adopt,"Tools",true,"Visual Studio is our default IDE for developing in C#. We get the Enterprise edition via our MSDN subscription.",false
+"Rider",adopt,"Tools",true,"Many teams use Rider instead of Visual Studio for their development. We have licences for it.",false
+"VS Code",adopt,"Tools",true,"A free lightweight IDE. Our text editor of choice.",false
+"GitHub",adopt,"Tools",true,"All development should use GitHub.",false
+"TeamCity",adopt,"Tools",true,"TeamCity is our default build system.",false
+"Azure DevOps",trial,"Tools",true,"We believe Azure DevOps might be a fine alternative to TeamCity.",false
+"GitHub Actions",assess,"Tools",true,"We're keeping an eye on GitHub actions as part of simplifying our build process.",false
+"Redgate.Build",hold,"Tools",true,"Redgate.Build is our own PowerShell based build scripts. Over time it's become complicated and we wouldn't recommend it for new projects.",false
+"Terraform",adopt,"Tools",true,"Used for automating infrastucture provisioning.",false
+"Application Insights",adopt,"Tools",true,"All applications should use Application Insights as the default developer telemetry platform (incl. feature usage and error reporting).",false
+"Raygun",hold,"Tools",true,"Deprecated in favour of Application Insights",false
+"Flyway",adopt,"Tools",true,"Our default tool for migrating database schemas.",false
+"WSL 2",adopt,"Tools",true,"Windows Subsystem for Linux should be installed on every development machine",false
+"SignalR",adopt,"Tools",true,"<a href='https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-5.0'>SignalR</a> is our default choice for push-functionality.",false
+"Hashicorp Vault",adopt,"Tools",true,"We recommend <a href='https://www.vaultproject.io/'>Hashicorp Vault</a> for storing secrets.",false
+"Keepass files in GitHub",hold,"Tools",true,"Use a password manager (or Vault) instead.",false
+"Docker",adopt,"Tools",true,"Docker should be used as the default containerisation technology. Used for building, testing and deployment.",false
+"gRPC",trial,"Tools",true,"<a href='https://grpc.io/'>gRPC</a> is a high-performance RPC framework which we may investigate for high-volume data collection (for example, SQL Monitor).",false
+"Snyk",adopt,"Tools",true,"We use Snyk to scan for known vulnerabilities in our products' dependencies.",false
+"DocFx",trial,"Tools",true,"<a href='https://dotnet.github.io/docfx/'>DocFX</a> is an extensible and scalable static documentation generator. We're experimenting with it for the <a href='https://progression.red-gate.com'>web version of the progression framework</a>. Could this be a future solution to host our documentation too?",false
+"Makefiles",assess,"Tools",true,"Should we fall back to using Makefiles as part of a simpler build process? Again, this is part of our desire to simplify our build process.",false
+"Cake",assess,"Tools",true,"<a href='https://cakebuild.net/'>Cake</a> is a free and OSS cross-platform build automation system with a C# DSL.",false
+"Bazel",assess,"Tools",true,"<a href='https://bazel.build/'>Bazel</a> is a build/test tool similar to Make/Maven/Gradle.",false
+"Earthly",assess,"Tools",true,"<a href='https://earthly.dev/'>Earthly</a> is a syntax for defining your build leading to repeatable and understable builds. ",false
+"Feature Flagging vendors (Launch Darkly?)",assess,"Tools",true,"If your usage of feature flagging becomes sufficiently complicated then it's time to investigate third-party vendors.",false
+"Virtualbox based Vagrant boxes",hold,"Tools",true,"Use Docker instead where possible. UI and manual testing may still use Virtualbox.",false
+"Flux 2",trial,"Tools",true,"<a href='https://fluxcd.io/'>Flux</a> is an implementation of GitOps for Kuberenetes",false
+"Redgate Platform",adopt,"Platforms",true,"All new applications should be built on the Redgate Platform.",false
+"Kubernetes",adopt,"Platforms",true,"<a href='https://kubernetes.io/'>K8S</a> is the undeniable winner of orchestration tools.",false
+"SQL Server as backing store",adopt,"Platforms",true,"When a product needs to store more complex data than it can fit in a flat file, we ask the customer for a SQL DB.",false
+"PostgreSQL as backing store",trial,"Platforms",true,"If there's a very good reason to use a lightweight/free database engine, we should choose Postgres.",false
+"Windows",adopt,"Platforms",true,"Windows must be one of our supported target platforms.",false
+"Linux x64 (.NET supported versions)",adopt,"Platforms",true,"Linux must be one of our supported target platforms.",false
+"macOS",adopt,"Platforms",true,"MacOS must be one of our supported target platforms.",false
+"Virtual Machines",hold,"Platforms",true,"Prefer using lightweight Docker containers.",false
+"CLIs",adopt,"Techniques",true,"Product should, where possible, expose funtionality via a CLI.",false
+"RESTful APIs",adopt,"Techniques",true,"A REST architetural style is our default choice for building web APIs. Deviations can be made when it makes sense to do so.",false
+"Containerised products",assess,"Techniques",true,"Where possible, all new products should be built to be containerised. We should ship the Mac/Linux versions of our products inside Docker containers.",false
+"Infrastructure as code",adopt,"Techniques",true,"Infrastructure should be provisioned through code rather than manually (except for ad-hoc testing)",false
+"Automated code style settings",adopt,"Techniques",true,"Codebases should be formatted consistently. Automated code-style settings achieve this without fuss.",false
+"Static code analysis (linters)",adopt,"Techniques",true,"Static code analysis is invaluable for automatically checking for problems in code. We use ESLint for JS and Roslyn-based analyzers for .NET. We also experimented with SonarQube but our implementation wasn't giving us confidence.",false
+"Semantic Versioning",adopt,"Techniques",true,"We should use semver for all our versioning needs unless there's a compelling reason not to.",false
+"Database Agnosticism",adopt,"Techniques",true,"We aim for feature parity between products that support different database engines.",false
+"Feature Flags",adopt,"Techniques",true,"Feature Flags are a great technique for minimizing long-lived feature branches. Our recommendation is to focus on simplicity - if you find yourself writing substantial code to support Feature Flags, consider using a third-party solution.",false
+"Continuous delivery",adopt,"Techniques",true,"Products should be ready for release at any time.",false
+"Continuous Deployment",assess,"Techniques",true,"We'd like to evaluate technology that increases our deployment frequency, with a view to getting value into the hands of our users as quickly as possible.",false
+"Build inside Docker containers",trial,"Techniques",true,"We should reduce build dependencies by building and testing our products inside containers.",false
+"AI/ML",assess,"Techniques",true,"AI/ML are becoming commoditized. Off-the-shelf software is available for predictive modelling, text analysis, anomaly detection and much more.",false
+"Automation/Low-code solutions",assess,"Techniques",true,"Remote is driving a digital transformation across industries. Low-code solutions, such as Power Apps, allow organizations to modernize these processes.",false
+"Git Ops",trial,"Techniques",true,"The core idea of GitOps is having a Git repository that always contains declarative descriptions of the infrastructure currently desired in the production environment and an automated process to make the production environment match the described state in the repository. If you want to deploy a new application or update an existing one, you only need to update the repository - the automated process handles everything else. It’s like having cruise control for managing your applications in production. <a href='https://www.gitops.tech/'>Read more</a>",false
