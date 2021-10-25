@@ -20,7 +20,26 @@ const CSVBuilder = function (url) {
     var self = {};
 
     self.build = function () {
-        d3.json(url, createBlips);
+      const blips = [];
+      let itemsFound = document.querySelectorAll('.pg-radar-category-list-item a');
+      
+      if (itemsFound) {
+        itemsFound.forEach((blip) => {
+          const { id, description, isnew, name, quadrant, ring, wasupdated } = blip.dataset;
+          
+          blips.push({
+            id, 
+            description,
+            name,
+            quadrant,
+            ring,
+            isNew: isnew,
+            wasUpdated: wasupdated
+          });
+        });
+
+        createBlips(blips);
+      }
     }
 
     var createBlips = function (data) {
