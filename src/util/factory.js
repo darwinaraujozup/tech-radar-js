@@ -25,7 +25,12 @@ const CSVBuilder = function (url) {
       
       if (itemsFound) {
         itemsFound.forEach((blip) => {
-          const { id, description, isnew, name, quadrant, ring, wasupdated } = blip.dataset;
+          let { ring } = blip.dataset;
+          const { id, description, isnew, name, quadrant, wasupdated } = blip.dataset;
+
+          if (ring && ring === 'Estratégico') {
+            ring = "Estrategico"
+          }
           
           blips.push({
             id, 
