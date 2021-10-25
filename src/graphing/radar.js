@@ -121,7 +121,7 @@ const Radar = function(size, radar) {
       } else {
         quadrantGroup
           .append("text")
-          .attr("class", `line-text ${ring.name()}`)
+          .attr("class", `line-text ${ring.name().toLowerCase()}`)
           .attr("y", center() + 4)
           .attr(
             "x",
@@ -653,7 +653,7 @@ const Radar = function(size, radar) {
       ((1 - adjustX) / 2) * (1 - scale / 2) * size;
     var translateYAll = (((1 + adjustY) / 2) * size * scale) / 2;
 
-    const containerWidth = document.querySelector('.page-single-card').scrollWidth;
+    const containerWidth = document.querySelector('.cp-tech-radar').scrollWidth;
 
     var moveRight = ((1 + adjustX) * (1 * containerWidth - size)) / 2;
     var moveLeft = ((1 - adjustX) * (1 * containerWidth - size)) / 2;
