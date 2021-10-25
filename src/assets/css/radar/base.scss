@@ -186,25 +186,25 @@
         text-decoration: none;
         cursor: pointer;
 
-        &.adopt {
+        &.adopt, &.strategic, &.estrategico {
           g {
             fill: #FF6D00;
           }
         }
         
-        &.trial {
+        &.trial, &.essential, &.essencial {
           g {
             fill: #006B69;
           }
         }
 
-        &.hold {
+        &.hold, &.potential, &.potencial {
           g {
             fill: #0984E3;
           }
         }
 
-        &.assess {
+        &.assess, &.deprecated, &.descontinuado {
           g {
             fill: #E17055;
           }
@@ -261,19 +261,19 @@
           fill: $black;
           text-transform: capitalize;
 
-          &.adopt {
+          &.adopt, &.strategic, &.estrategico {
             fill: #FF6D00;
           }
 
-          &.trial {
+          &.trial, &.essential, &.essencial {
             fill: #006B69;
           }
 
-          &.hold {
+          &.hold, &.potential, &.potencial {
             fill: #0984E3;
           }
 
-          &.assess {
+          &.assess, &.deprecated, &.descontinuado  {
             fill: #E17055;
           }
         }

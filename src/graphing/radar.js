@@ -108,7 +108,7 @@ const Radar = function(size, radar) {
       if (quadrant.order === "first" || quadrant.order === "fourth") {
         quadrantGroup
           .append("text")
-          .attr("class", `line-text ${ring.name()}`)
+          .attr("class", `line-text ${ring.name().toLowerCase()}`)
           .attr("y", center() + 4)
           .attr(
             "x",
@@ -443,8 +443,9 @@ const Radar = function(size, radar) {
 
     var group = quadrantGroup
       .append("g")
-      .attr("class", `blip-link triggerOpenModal ${blip.ring().name()}`)
+      .attr("class", `blip-link triggerOpenModal ${blip.ring().name().toLowerCase()}`)
       .attr("data-modal", blip.description())
+      .attr("data-id", blip.id())
       .attr("aria-controls", blip.description());
     
     if (blip.wasUpdated()) {

@@ -20,19 +20,21 @@ const CSVBuilder = function (url) {
     var self = {};
 
     self.build = function () {
-        d3.csv(url, createBlips);
+        d3.json(url, createBlips);
     }
 
     var createBlips = function (data) {
         try {
-            var columnNames = data['columns'];
-            delete data['columns'];
+          if (data && data.length) {
+            const columnNames = Object.keys(data[0]);
+
             var contentValidator = new ContentValidator(columnNames);
             contentValidator.verifyContent();
             contentValidator.verifyHeaders();
             var blips = _.map(data, new InputSanitizer().sanitize);
             plotRadar('Tech-radar', blips);
-            loadBuddy();
+            // loadBuddy();
+          }
         } catch (exception) {
             plotErrorMessage(exception);
         }
@@ -50,6 +52,17 @@ const plotRadar = function (title, blips) {
     document.title = title;
     d3.selectAll(".loading").remove();
 
+    const ringMapOrder = {
+      strategic: 0,
+      estrategico: 0,
+      essential: 1,
+      essencial: 1,
+      potential: 2,
+      potencial: 2,
+      deprecated: 3,
+      descontinuado: 3,
+    };
+
     var rings = _.map(_.uniqBy(blips, 'ring'), 'ring');
     var ringMap = {};
     var maxRings = 4;
@@ -58,7 +71,8 @@ const plotRadar = function (title, blips) {
         if (i == maxRings) {
             throw new MalformedDataError(ExceptionMessages.TOO_MANY_RINGS);
         }
-        ringMap[ringName] = new Ring(ringName, i);
+        
+        ringMap[ringName] = new Ring(ringName, ringMapOrder[ringName.toLowerCase()]);
     });
 
     var quadrants = {};
@@ -66,12 +80,12 @@ const plotRadar = function (title, blips) {
         if (!quadrants[blip.quadrant]) {
             quadrants[blip.quadrant] = new Quadrant(_.capitalize(blip.quadrant));
         }
-        quadrants[blip.quadrant].add(new Blip(blip.name, ringMap[blip.ring], blip.isNew.toLowerCase() === 'true', blip.topic, blip.description, blip.wasUpdated ? blip.wasUpdated.toLowerCase() === 'true' : false))
+        quadrants[blip.quadrant].add(new Blip(blip.id, blip.name, ringMap[blip.ring], blip.topic, blip.description, blip.isNew.toLowerCase() === 'true', blip.wasUpdated ? blip.wasUpdated.toLowerCase() === 'true' : false))
     });
 
     var radar = new Radar();
     _.each(quadrants, function (quadrant) {
-        radar.addQuadrant(quadrant)
+      radar.addQuadrant(quadrant)
     });
 
     var size = 590.52;
