@@ -73,7 +73,6 @@ const CSVBuilder = function (url) {
 };
 
 const plotRadar = function (title, blips) {
-    document.title = title;
     d3.selectAll(".loading").remove();
 
     const ringMapOrder = {
@@ -123,8 +122,6 @@ function plotLoading(content) {
         .attr('class', 'loading')
         .append('div')
         .attr('class', 'input-sheet');
-
-    document.title = "Building...";
 }
 
 function plotErrorMessage(exception) {
