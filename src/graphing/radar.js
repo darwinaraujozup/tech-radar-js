@@ -488,7 +488,7 @@ const Radar = function(size, radar) {
       d3.selectAll("g.blip-link").attr("opacity", 0.3);
       group.attr("opacity", 1.0);
       blipListItem.selectAll(".blip-list-item").classed("highlight", true);
-      tip.show(blip.name(), group.node());
+      tip.show(blip.name());
     };
 
     var mouseOut = function() {
